@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :comments
+  resources :comments
+  resources :blogposts
+  resources :blogposts
+  resources :blogposts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,6 +61,9 @@ Rails.application.routes.draw do
   #   end
 
 	Rails.application.routes.draw do
-		root 'application#hello'
+ 		resources :comments
+ 		resources :blogposts
+		root 'blogposts#index'
+		get 'hello' => 'application#hello'
 	end	
 end
